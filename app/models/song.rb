@@ -4,12 +4,12 @@ class Song
   include Memorable::InstanceMethods
   include Paramable
 
-  attr_accessor :name
-  attr_reader :artist, :genre
+  attr_accessor :name, :artist
+  attr_reader :genre
 
-  def artist=(artist)
-    @artist = artist
-    artist.add_song(self) unless artist.songs.include? self
+  def add_artist(artist)
+    self.artist = artist unless artist
+    artist.add_song(self)
   end
 
   def genre=(genre)
