@@ -1,6 +1,22 @@
 class Genre
-  # code here
+  extend Memorable::ClassMethods
+  extend Findable
+  include Memorable::InstanceMethods
+  include Paramable
 
-  def self.reset_all
+  attr_accessor :name, :songs, :artists
+
+  def initialize
+    @artists = []
+    @songs = []
+    super
+  end
+
+  def add_song(song)
+    songs << song
+  end
+
+  def add_artist(artist)
+    artists << artist unless artists.include? artist
   end
 end
