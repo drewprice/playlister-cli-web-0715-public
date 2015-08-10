@@ -15,13 +15,14 @@ class Artist
 
   def add_song(song)
     songs << song unless songs.include? song
-
     add_genre(song.genre) if song.genre
   end
 
   def add_songs(songs)
     songs.each { |song| add_song(song) }
   end
+
+  private
 
   def add_genre(genre)
     genres << genre
