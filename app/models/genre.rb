@@ -2,7 +2,6 @@ class Genre
   extend Memorable::ClassMethods
   extend Findable
   include Memorable::InstanceMethods
-  include Paramable
 
   attr_accessor :name, :songs, :artists
 
